@@ -1,0 +1,12 @@
+---
+const { post } = Astro.props;
+---
+
+<article class="border w-96">
+  <img class="w-80 mx-auto h-auto mb-2 m-1" src={post.frontmatter.image?.url} />
+  <a class="text-lg font-normal" href={post.url} >{post.frontmatter.title}</a>
+  <div class="text-slate-300">{post.frontmatter.description}</div>
+  <div class="text-slate-300">
+    {new Date(post.frontmatter.pubDate).toDateString()}
+  </div>
+</article>
