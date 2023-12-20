@@ -3,9 +3,10 @@
 ---
 
 <nav
-  class="flex gap-3 px-5 py-2 underline-offset-4 decoration-white/100 decoration-1 border text-lg border-white"
+  class="flex gap-4 items-center px-5 py-10 underline-offset-4 decoration-white decoration-1 text-lg font-normal"
 >
+  <div class="text-3xl mr-10 ml-5">rjwilson.dev</div>
   <a href="/" class="hover:underline px-2">Home</a>
-  <a href="/about/" class="hover:underline px-2">About</a>
-  <a href="/blog/" class="hover:underline px-2">Blog</a>
+  <a href="/about/" class="hover:underline px-2" data-astro-prefetch="hover">About</a>
+  <a href="/blog/" class="hover:underline px-2" data-astro-prefetch="viewport" >Blog</a>
 </nav>

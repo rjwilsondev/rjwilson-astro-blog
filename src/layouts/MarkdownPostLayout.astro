@@ -4,10 +4,25 @@ import BaseLayout from "./BaseLayout.astro";
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-  <h1>{frontmatter.title}</h1>
-  <p>{frontmatter.pubDate.slice(0, 10)}</p>
-  <p><em>{frontmatter.description}</em></p>
-  <p>Written by: {frontmatter.author}</p>
-  <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
-  <slot />
+  <div class="lg:max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold mb-2">{frontmatter.title}</h1>
+    <p class="mb-5">
+      <span class="font-normal">
+        {frontmatter.author}
+      </span>
+      <span class="">
+        {new Date(frontmatter.pubDate).toLocaleDateString()}
+      </span>
+    </p>
+    <div class="w-full h-40 lg:h-60 mb-3">
+      <img
+        src={frontmatter.image.url}
+        class="h-full w-full object-contain"
+        alt={frontmatter.image.alt}
+      />
+    </div>
+    <article class="prose prose-invert max-w-4xl">
+      <slot />
+    </article>
+  </div>
 </BaseLayout>

@@ -23,3 +23,14 @@ Welcome to my _new blog_ about learning Astro! Here, I will share my learning jo
 ## What's next
 
 I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
+
+```html
+<article class="border w-96">
+  <img class="w-80 mx-auto h-auto mb-2 m-1" src={post.frontmatter.image?.url} />
+  <a class="text-lg font-normal" href={post.url} >{post.frontmatter.title}</a>
+  <div class="text-slate-300">{post.frontmatter.description}</div>
+  <div class="text-slate-300">
+    {new Date(post.frontmatter.pubDate).toDateString()}
+  </div>
+</article>
+```
