@@ -5,8 +5,13 @@ import BaseLayout from "./BaseLayout.astro";
 
 <BaseLayout pageTitle={frontmatter.title}>
   <div class="lg:max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold mb-2">{frontmatter.title}</h1>
-    <p class="mb-5">
+    <h1
+      class="text-4xl font-bold mb-2"
+      transition:name={`hero ${frontmatter.title} title`}
+    >
+      {frontmatter.title}
+    </h1>
+    <p class="mb-5" transition:name={`hero ${frontmatter.title} author`}>
       <span class="font-normal">
         {frontmatter.author}
       </span>
@@ -16,6 +21,7 @@ import BaseLayout from "./BaseLayout.astro";
     </p>
     <div class="w-full h-40 lg:h-60 mb-3">
       <img
+        transition:name={`hero ${frontmatter.title} img`}
         src={frontmatter.image.url}
         class="h-full w-full object-contain"
         alt={frontmatter.image.alt}

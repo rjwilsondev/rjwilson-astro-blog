@@ -3,8 +3,27 @@ const { post } = Astro.props;
 ---
 
 <article class="border w-96">
-  <img class="w-80 mx-auto h-auto mb-2 m-1" src={post.frontmatter.image?.url} />
-  <a class="text-lg font-normal" href={post.url} >{post.frontmatter.title}</a>
+  <a
+    transition:name={`hero ${post.frontmatter.title} title`}
+    class="text-lg font-normal"
+    href={post.url}>{post.frontmatter.title}</a
+    >
+    <p class="mb-5"
+    
+    transition:name={`hero ${post.frontmatter.title} author`}
+  >
+    <span class="font-normal">
+      {post.frontmatter.author}
+    </span>
+    <span class="">
+      {new Date(post.frontmatter.pubDate).toLocaleDateString()}
+    </span>
+  </p>
+  <img
+    transition:name={`hero ${post.frontmatter.title} img`}
+    class="w-80 mx-auto h-auto mb-2 m-1"
+    src={post.frontmatter.image?.url}
+  />
   <div class="text-slate-300">{post.frontmatter.description}</div>
   <div class="text-slate-300">
     {new Date(post.frontmatter.pubDate).toDateString()}
