@@ -1,9 +1,9 @@
 ---
 layout: "../../layouts/MarkdownPostLayout.astro"
-title: "My First Blog Post"
+title: "Welcome to my Blog"
 pubDate: 2023-12-01
 description: "This is the first post of my new Astro blog."
-author: "Ryan Wilson"
+author: "R.J Wilson"
 image:
   url: "https://docs.astro.build/assets/full-logo-light.png"
   alt: "The full Astro logo."
@@ -34,3 +34,14 @@ I will finish the Astro tutorial, and then keep adding more posts. Watch this sp
   </div>
 </article>
 ```
+
+
+If you have headers in the markdown files, you can directly link them in the file.
+
+Markdown Header:
+
+this will generate an implicit id #the-header (replace internal spaces with hyphens and make lowercase).
+
+To navigate to this id, you can create the link like this:
+
+[Link to Header](#what-ive-accomplished)

@@ -5,7 +5,7 @@ pubDate: 2024-01-12
 description: "Let's talk about .NET"
 author: "Astro Learner"
 image:
-  url: "https://docs.astro.build/assets/full-logo-light.png"
+  url: "https://images.pexels.com/photos/1708601/pexels-photo-1708601.jpeg"
   alt: "The full Astro logo."
 tags: ["astro", "blogging", "learning in public"]
 ---

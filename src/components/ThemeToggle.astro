@@ -1,0 +1,56 @@
+---
+const { className } = Astro.props;
+---
+
+<button
+  id="themeToggle"
+  class={"px-2 py-1 font-medium text-sm bg-emerald-950 text-gray-50  dark:bg-white dark:text-emerald-950 " +
+    className}
+>
+  Toggle Theme
+</button>
+
+<script is:inline>
+  document.addEventListener("astro:page-load", () => {
+    const theme = (() => {
+      if (
+        typeof localStorage !== "undefined" &&
+        localStorage.getItem("theme")
+      ) {
+        return localStorage.getItem("theme");
+      }
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        return "dark";
+      }
+      return "light";
+    })();
+
+    if (theme === "light") {
+      document.documentElement.classList.remove("dark");
+    } else {
+      document.documentElement.classList.add("dark");
+    }
+
+    window.localStorage.setItem("theme", theme);
+
+    const handleToggleClick = () => {
+      const element = document.documentElement;
+      element.classList.toggle("dark");
+
+      const isDark = element.classList.contains("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    };
+
+    document
+      .getElementById("themeToggle")
+      .addEventListener("click", handleToggleClick);
+  });
+</script>
+
+<script>
+  document.addEventListener("astro:after-swap", () => {
+    localStorage.theme === "dark"
+      ? document.documentElement.classList.add("dark")
+      : document.documentElement.classList.add("light");
+  });
+</script>
