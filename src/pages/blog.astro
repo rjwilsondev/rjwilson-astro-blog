@@ -6,14 +6,16 @@ const pageTitle = "My Astro Learning Blog";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <p>This is where I will post about my journey learning Astro.</p>
-  <ul class="space-y-3 mx-auto w-4/5 flex flex-col gap-16 items-center">
-    {
-      allPosts.map((post) => (
-        <li class="mx-auto">
-          <PostPreview post={post} />
-        </li>
-      ))
-    }
-  </ul>
+  <div>
+    <h2 class="text-xl font-normal font-serif text-center" >Recent Posts</h2>
+    <ul class="space-y-3 mx-auto">
+      {
+        allPosts.map((post) => (
+          <li class="mx-auto w-[300px] md:w-[550px] ">
+            <PostPreview post={post} />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </BaseLayout>
