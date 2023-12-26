@@ -1,5 +1,5 @@
 import defaultTheme from "tailwindcss/defaultTheme";
-import prose from "@tailwindcss/typography"
+import prose from "@tailwindcss/typography";
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx}"],
@@ -8,10 +8,16 @@ export default {
     extend: {
       fontFamily: {
         sans: [
-          "Roboto Slab Variable",
-          "Roboto Slab",
+          "Roboto Flex Variable",
+          "Roboto Flex",
+          "Roboto",
           "Inter",
           ...defaultTheme.fontFamily.sans,
+        ],
+        serif: [
+          "Roboto Slab Variable",
+          "Roboto Slab",
+          ...defaultTheme.fontFamily.serif,
         ],
       },
     },

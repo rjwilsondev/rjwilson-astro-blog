@@ -13,6 +13,7 @@
     "@astrojs/check": "^0.3.3",
     "@astrojs/react": "^3.0.7",
     "@astrojs/tailwind": "^5.0.3",
+    "@fontsource-variable/roboto-flex": "^5.0.8",
     "@fontsource-variable/roboto-slab": "^5.0.18",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
@@ -23,6 +24,7 @@
     "typescript": "^5.3.3"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.10"
+    "@tailwindcss/typography": "^0.5.10",
+    "wrangler": "^3.22.1"
   }
 }
