@@ -31,14 +31,37 @@ const { pageTitle } = Astro.props;
         return "light";
       })();
 
+      const setTheme = (newTheme) => {
+        if (
+          typeof localStorage !== "undefined" &&
+          (newTheme === "dark" || newTheme === "light")
+        )
+          localStorage.setItem("theme", newTheme);
+      };
+
       if (theme === "light") {
         document.documentElement.classList.remove("dark");
       } else {
         document.documentElement.classList.add("dark");
       }
-      window.localStorage.setItem("theme", theme);
+      setTheme(theme);
+
+      document.addEventListener("astro:after-swap", () => {
+        console.log("after swap");
+        localStorage.theme === "dark"
+          ? document.documentElement.classList.add("dark")
+          : document.documentElement.classList.add("light");
+      });
+
+      document.addEventListener("astro:before-swap", (ev) => {
+        // Pass the incoming document to set the theme on it
+        localStorage.theme === "dark"
+          ? ev.newDocument.documentElement.classList.add("dark")
+          : ev.newDocument.documentElement.classList.add("light");
+        console.log("before swap");
+      });
     </script>
-    <ViewTransitions />
+    <ViewTransitions fallback="none" />
   </head>
   <body
     class="dark:bg-[#031607f4] dark:text-gray-50 bg-gray-50 text-green-950 font-light transition-colors duration-500"
