@@ -10,13 +10,36 @@ import { ViewTransitions } from "astro:transitions";
 const { pageTitle } = Astro.props;
 ---
 
-<html lang="en" class=" overflow-y-scroll" >
+<html lang="en" class="overflow-y-scroll">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+    <style>
+      ::-webkit-scrollbar {
+        width: 0.75rem;
+      }
+
+      ::-webkit-scrollbar-track {
+        background-color: #f9fbf7;
+      }
+
+      :is(.dark)::-webkit-scrollbar-track {
+        background-color: #000;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        --tw-bg-opacity: 1;
+        background-color: #EEE;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        --tw-bg-opacity: 1;
+        background-color: #DDD;
+      }
+    </style>
     <script is:inline>
       const theme = (() => {
         if (
@@ -60,7 +83,7 @@ const { pageTitle } = Astro.props;
     class="dark:bg-[#031607f4] dark:text-green-50 bg-[#F5F7F3] text-green-950 transition-colors duration-500"
   >
     <Navigation />
-    <main class="mx-auto md:max-w-4xl" >
+    <main class="mx-auto md:max-w-4xl" id="main">
       <slot />
     </main>
     <Footer />
