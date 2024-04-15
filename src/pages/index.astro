@@ -1,6 +1,36 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
-<BaseLayout pageTitle="RJ Wilson - Software development blog" >
-  <h2>My awesome blog subtitle</h2>
+
+<BaseLayout pageTitle="Ryan Wilson - Software developer">
+  <div class="max-w-2xl mr-auto space-y-5 px-3 lg:px-0 text-lg ">
+    <h2 class="mb-2 text-3xl font-medium">Ryan Wilson</h2>
+    <img src="/me.png" class="h-28 w-28 object-cover rounded-md" />
+    <p>Hi! I'm Ryan. I'm a software developer and lifelong learner!</p>
+    <p>
+      This site is where I'll be showcasing some of my future projects. Check out my blog series about web technology, where I write about things
+      like React, ASP.NET, data visualization, and more. Stay tuned!
+    </p>
+  </div>
+  <div class="mt-24 text-lg ">
+    <h3>Socials:</h3>
+    <ul class="list-disc" >
+      <li>
+        <a
+          href="https://www.linkedin.com/in/rjwilsondev/"
+          target="_blank"
+          class="hover:underline font-medium px-1 inline-block underline-offset-4"
+          >LinkedIn</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://github.com/rjwilsondev"
+          target="_blank"
+          class="hover:underline font-medium px-1 inline-block underline-offset-4"
+          >Github</a
+        >
+      </li>
+    </ul>
+  </div>
 </BaseLayout>
