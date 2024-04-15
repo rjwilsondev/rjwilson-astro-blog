@@ -3,18 +3,14 @@ import ThemeToggle from "./ThemeToggle.astro";
 ---
 
 <header class="font-serif md:mx-auto md:max-w-4xl text-lg">
-  <a href="#main" class="sr-only focus:not-sr-only focus:fixed ">Skip to main</a>
   <nav
-    class="flex gap-0.5 md:gap-4 items-center py-10 underline-offset-4 decoration-white decoration-1"
+    class="flex px-3 lg:px-0  gap-0.5 md:gap-4 items-center py-10 underline-offset-4 dark:decoration-white decoration-2 "
   >
-    <a href="/" class="text-xl md:text-2xl px-2 md:mr-10 md:ml-5" aria-label="Home"
+    <a href="/" class="text-xl md:text-2xl md:mr-10 "
       >rjwilson.dev</a
     >
-    <a href="/blog/" class="hover:underline px-2" data-astro-prefetch="hover"
-      >Blog</a
-    >
-    <a href="/projects/" class="hover:underline px-2" data-astro-prefetch="hover"
-      >Projects</a
+    <a href="Ryan Wilson Resume.pdf" class="hover:underline px-2" target="_blank" 
+      >Resume</a
     >
     <ThemeToggle className="md:mr-5 hidden md:block ml-auto" />
   </nav>
