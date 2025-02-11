@@ -1,30 +1,32 @@
 ---
-const { frontmatter } = Astro.props;
+const { post } = Astro.props;
+import { Image } from "astro:assets";
 import BaseLayout from "./BaseLayout.astro";
 ---
 
-<BaseLayout pageTitle={frontmatter.title}>
+<BaseLayout pageTitle={post.data.title}>
   <div class="lg:max-w-3xl mx-auto">
     <h1
       class="text-4xl font-bold mb-2"
-      transition:name={`hero ${frontmatter.title} title`}
+      transition:name={`hero ${post.data.title} title`}
     >
-      {frontmatter.title}
+      {post.data.title}
     </h1>
-    <p class="mb-5" transition:name={`hero ${frontmatter.title} author`}>
+    <p class="mb-5" transition:name={`hero ${post.data.title} author`}>
       <span class="font-normal">
-        {frontmatter.author}
+        {post.data.author}
       </span>
       <span class="">
-        {new Date(frontmatter.pubDate).toLocaleDateString()}
+        {new Date(post.data.pubDate).toLocaleDateString()}
       </span>
     </p>
-    <div class="w-full h-40 lg:h-60 mb-3">
-      <img
-        transition:name={`hero ${frontmatter.title} img`}
-        src={frontmatter.image.url}
+    <div class="w-full h-[400px] lg:h-[600px] mb-3">
+      <Image
+        transition:name={`hero ${post.data.title} img`}
+        transition:animate={"initial"}
+        src={post.data.cover}
         class="h-full w-full object-contain"
-        alt={frontmatter.image.alt}
+        alt={''}
       />
     </div>
     <article class="prose dark:prose-invert max-w-4xl">

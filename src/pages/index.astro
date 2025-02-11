@@ -1,11 +1,13 @@
 ---
+import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import meImage from "../img/me.png"
 ---
 
 <BaseLayout pageTitle="Ryan Wilson - Software developer">
   <div class="max-w-2xl mr-auto space-y-5 px-3 lg:px-0 text-lg ">
     <h2 class="mb-2 text-3xl font-medium">Ryan Wilson</h2>
-    <img src="/me.png" class="h-28 w-28 object-cover rounded-md" />
+    <Image src={meImage} class="h-36 w-36 object-cover rounded-md" alt="" />
     <p>Hi! I'm Ryan. I'm a software developer and lifelong learner!</p>
     <p>
       This site is where I'll be showcasing some of my future projects. Check out my blog series about web technology, where I write about things
